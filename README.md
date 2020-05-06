@@ -1,5 +1,7 @@
 
 # zoho-integration-php-sdk
+This also can be used in Laravel
+<br />
 I couldn't find this in 1 place so hopefully this helps any one.
 <br />
 1- Clone the Repo
