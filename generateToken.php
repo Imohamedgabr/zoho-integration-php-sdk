@@ -9,8 +9,6 @@ use zcrmsdk\crm\crud\ZCRMRecord;
 class generateToken{
 public function __construct()
     {
-        // $this->middleware('auth');
-        // dd(public_path().'/zcrm_oauthtokens.txt');
         $configuration =array("client_id"=>'your_id',"client_secret"=>'your_secret',"redirect_uri"=>'https://register.zvendo.online/register',"currentUserEmail"=>'imohamedgabr@outlook.com' , 'token_persistence_path' =>'\public');
 
         ZCRMRestClient::initialize($configuration);
@@ -41,8 +39,7 @@ public function __construct()
         $record->setFieldValue("CountryTable","Egypt");
 
         array_push($records, $record); // pushing the record to the array.
-       // $trigger=array();//triggers to include
-       // $lar_id="123213321321232";//lead assignment rule id
+      
         $responseIn = $moduleIns->createRecords($records,null,null); // updating the records.$trigger,$lar_id are optional
         foreach ($responseIn->getEntityResponses() as $responseIns) {
             echo "HTTP Status Code:" . $responseIn->getHttpStatusCode(); // To get http response code
